@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>عرض بيانات الإجازة</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>عرض بيانات الإجازة المرضية</h1>
+  <div id="dataDisplay"></div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+
+    const fields = {
+      "رمز الخدمة": params.get("serviceCode"),
+      "رقم الهوية": params.get("patientId"),
+      "الاسم": params.get("patientName"),
+      "تاريخ إصدار التقرير": params.get("sickLeaveDate"),
+      "تبدأ من": params.get("fromDate"),
+      "وحتى": params.get("toDate"),
+      "المدة بالأيام": params.get("duration"),
+      "اسم الطبيب": params.get("doctorName"),
+      "المسمى الوظيفي": params.get("jobTitle"),
+    };
+
+    const container = document.getElementById("dataDisplay");
+    for (const [label, value] of Object.entries(fields)) {
+      const p = document.createElement("p");
+      p.textContent = `${label}: ${value}`;
+      container.appendChild(p);
+    }
+  </script>
+</body>
+</html>

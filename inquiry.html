@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <title>الاستعلام عن الإجازة</title>
+    <script>
+        window.onload = function() {
+            document.getElementById("name").textContent = localStorage.getItem("name") || "غير متوفر";
+            document.getElementById("id").textContent = localStorage.getItem("id") || "غير متوفر";
+            document.getElementById("leaveCode").textContent = localStorage.getItem("leaveCode") || "غير متوفر";
+            document.getElementById("startDate").textContent = localStorage.getItem("startDate") || "غير متوفر";
+            document.getElementById("endDate").textContent = localStorage.getItem("endDate") || "غير متوفر";
+        }
+    </script>
+</head>
+<body>
+    <h2>معلومات الإجازة المرضية</h2>
+    <p><strong>الاسم:</strong> <span id="name"></span></p>
+    <p><strong>رقم الهوية:</strong> <span id="id"></span></p>
+    <p><strong>رمز الإجازة:</strong> <span id="leaveCode"></span></p>
+    <p><strong>تاريخ البداية:</strong> <span id="startDate"></span></p>
+    <p><strong>تاريخ النهاية:</strong> <span id="endDate"></span></p>
+
+    <p><a href="index.html">إدخال إجازة جديدة</a></p>
+</body>
+</html>
